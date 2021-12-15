@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+    posgres:
+        image: postgres:latest
+        container_name: SCPostgres
+        ports:
+        - "54322:5432"
+        environment:
+            - POSTGRES_DB=ServiceClient
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=mysecretpassword
+    
+

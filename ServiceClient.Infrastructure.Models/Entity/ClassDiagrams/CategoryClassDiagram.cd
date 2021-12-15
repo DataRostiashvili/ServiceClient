@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ServiceClient.Infrastructure.Models.Entity.CategoryEntity">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <AssociationLine Name="SubCategories" Type="ServiceClient.Infrastructure.Models.Entity.CategoryEntity" ManuallyRouted="true">
+      <Path>
+        <Point X="4.532" Y="3.565" />
+        <Point X="4.532" Y="4.773" />
+        <Point X="6.687" Y="4.773" />
+        <Point X="6.687" Y="3.964" />
+        <Point X="4.978" Y="3.964" />
+        <Point X="4.978" Y="3.565" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.182" Width="1.813" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAABAAAAAEAAACAAAAAAAAAAAgAAAAAAAQAQAAA=</HashCode>
+      <FileName>Entity\CategoryEntity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SubCategories" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
