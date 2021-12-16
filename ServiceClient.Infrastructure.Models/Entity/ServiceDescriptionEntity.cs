@@ -17,7 +17,10 @@ namespace ServiceClient.Infrastructure.Models.Entity
         public bool IsDeleted { get; set; }
         #endregion
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
+
+        public ServicePacketEntity ServicePack { get; set; }
+        public int ServicePackId { get;set; }
 
     }
 }

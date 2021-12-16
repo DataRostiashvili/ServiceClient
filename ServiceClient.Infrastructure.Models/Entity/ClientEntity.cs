@@ -8,6 +8,7 @@ namespace ServiceClient.Infrastructure.Models.Entity
 {
     public class ClientEntity : UserEntity
     {
+        public ICollection<ClientGroupEntity> ClientGroups { get; set; }
 
     }
 }

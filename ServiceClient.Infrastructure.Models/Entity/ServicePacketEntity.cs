@@ -1,16 +1,13 @@
 ﻿using ServiceClient.Infrastructure.Models.Entity.Interfaces.Audit;
-using ServiceClient.Infrastructure.Models.Interfaces.Audit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-
 
 namespace ServiceClient.Infrastructure.Models.Entity
 {
-    public class ReviewEntity : IGenericEntity
+    public class ServicePacketEntity  : IGenericEntity
     {
         #region interface implementation
         public int Id { get; set; }
@@ -20,9 +17,15 @@ namespace ServiceClient.Infrastructure.Models.Entity
         public bool IsDeleted { get; set; }
         #endregion
 
-        [Range(1, 5)]
-        public uint? Ranking { get; set; }
-        public string Review { get; set; }
+
+        public PaymentEntity Payment { get; set; }
+        public int paymentId { get; set; }
+
+
+        public ServiceDescriptionEntity ServiceDescription { get; set; }
+        public int ServiceDescriptionId { get; set; }
+
+
 
     }
 }

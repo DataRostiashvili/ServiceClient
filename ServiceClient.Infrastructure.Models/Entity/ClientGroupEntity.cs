@@ -17,6 +17,12 @@ namespace ServiceClient.Infrastructure.Models.Entity
         public bool IsDeleted { get; set; }
         #endregion
 
+        public int ClientId { get; set; }
+        public ClientEntity Client { get; set; }
+
+
+        public int GroupId { get; set; }
+        public GroupEntity Group { get; set; }
 
     }
 }
