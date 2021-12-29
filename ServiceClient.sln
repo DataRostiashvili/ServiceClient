@@ -10,9 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		docker-compose.yaml = docker-compose.yaml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Infrastructure.Data", "ServiceClient.Infrastructure.Data\ServiceClient.Infrastructure.Data.csproj", "{C3D7D7F7-AFB8-44DB-A261-B785FF734846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Infrastructure.Data", "ServiceClient.Infrastructure.Data\ServiceClient.Infrastructure.Data.csproj", "{C3D7D7F7-AFB8-44DB-A261-B785FF734846}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5497DFDE-D794-4A8F-BD93-19AE9FC75701}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{FA007D0D-D452-43D7-A7F4-16F47D0037F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Identity.Api", "ServiceClient.Identity.Api\ServiceClient.Identity.Api.csproj", "{2254434D-3EAC-478A-92A8-2AD1FB38A191}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +32,10 @@ Global
 		{C3D7D7F7-AFB8-44DB-A261-B785FF734846}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3D7D7F7-AFB8-44DB-A261-B785FF734846}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3D7D7F7-AFB8-44DB-A261-B785FF734846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2254434D-3EAC-478A-92A8-2AD1FB38A191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2254434D-3EAC-478A-92A8-2AD1FB38A191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2254434D-3EAC-478A-92A8-2AD1FB38A191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2254434D-3EAC-478A-92A8-2AD1FB38A191}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +43,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F3810F25-3941-46D5-8E8A-A5D5D3A3F724} = {5497DFDE-D794-4A8F-BD93-19AE9FC75701}
 		{C3D7D7F7-AFB8-44DB-A261-B785FF734846} = {5497DFDE-D794-4A8F-BD93-19AE9FC75701}
+		{2254434D-3EAC-478A-92A8-2AD1FB38A191} = {FA007D0D-D452-43D7-A7F4-16F47D0037F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E8D012D9-C54C-4CDA-9F2E-DE018C88B380}

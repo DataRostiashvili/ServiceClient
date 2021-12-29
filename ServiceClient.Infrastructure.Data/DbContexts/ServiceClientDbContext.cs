@@ -9,7 +9,7 @@ using ServiceClient.Infrastructure.Models.Entity;
 
 namespace ServiceClient.Infrastructure.Data.DbContexts
 {
-    public class ServiceClientDbContext : DbContext
+    public class ServiceClientDbContext : BaseDbContext
     {
         public DbSet<ClientEntity> Clients { get; set; }
         public DbSet<ServiceProviderEntity> ServiceProviders { get; set; }

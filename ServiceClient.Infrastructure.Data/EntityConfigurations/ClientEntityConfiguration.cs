@@ -73,13 +73,6 @@ namespace ServiceClient.Infrastructure.Data.EntityConfigurations
         public void Configure(EntityTypeBuilder<PaymentEntity> builder)
         {
             builder
-               .HasOne(p => p.ServiceDescription)
-               .WithOne(d => d.ServicePack);
-            builder
-               .HasOne(p => p.Payment)
-               .WithOne(p => p.ServicePack);
-
-            builder
                .Property(p => p.Currency)
                .HasConversion<string>();
             builder
