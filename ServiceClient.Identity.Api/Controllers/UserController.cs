@@ -7,7 +7,7 @@ using AutoMapper;
 
 namespace ServiceClient.Identity.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     [ApiVersion("1.0")]
     [Authorize]
@@ -34,7 +34,7 @@ namespace ServiceClient.Identity.Api.Controllers
         #endregion
 
         [AllowAnonymous]
-        [HttpPost(nameof(Authenticate))]
+        [HttpPost]
         public async Task<IActionResult> Authenticate(AuthenticateRequest request)
         {
             IActionResult result = Unauthorized();
@@ -51,29 +51,43 @@ namespace ServiceClient.Identity.Api.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost(nameof(Register))]
+        [HttpPost]
         public async Task<IActionResult> Register(RegistrationRequest request)
         {
-            
+            IActionResult result = BadRequest();
 
             await _userService.Register(request);
 
-            return CreatedAtAction(nameof(GetUser), new { id = entity.ID }, entity);
+            return CreatedAtAction(nameof(GetUser), new { userName = request.UserName });
 
         }
 
 
-        [HttpGet(nameof(GetUser))]
-        public async Task<IActionResult> GetUser(RegistrationRequest request)
+        [HttpGet]
+        public async Task<IActionResult> GetUserById(Guid userId)
         {
+            IActionResult res = NotFound();
+            var user = await _userService.GetUer(userId);
 
+            if (User != null)
+                res = Ok(user);
 
-            await _userService.Register(request);
-
-           
+            return res;
 
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetUser(string userName)
+        {
+            IActionResult res = NotFound();
+            var user = await _userService.GetUer(userName);
+
+            if (User != null)
+                res = Ok(user);
+
+            return res;
+
+        }
 
 
 

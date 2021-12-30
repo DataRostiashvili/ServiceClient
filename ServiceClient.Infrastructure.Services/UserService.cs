@@ -47,7 +47,20 @@ namespace ServiceClient.Infrastructure.Services
 
             var userEntity = _repository
                 .GetByPredicate(user => user.Id == userId)
-                .Where(u => u.PasswordHash == request.PasswordHash)
+                .SingleOrDefault();
+
+            if (userEntity != null)
+                res = _mapper.Map<UserDTO>(userEntity);
+
+            return Task.FromResult(res);
+        }
+
+        public Task<UserDTO?> GetUer(string userName)
+        {
+            UserDTO? res = null;
+
+            var userEntity = _repository
+                .GetByPredicate(user => user.UserName == userName)
                 .SingleOrDefault();
 
             if (userEntity != null)

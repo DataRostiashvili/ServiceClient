@@ -11,6 +11,11 @@ namespace ServiceClient.Infrastructure.Services.Interfaces
     public  interface IUserService
     {
         Task<UserDTO?> Authenticate(AuthenticateRequest request);
-        Task Register(RegistrationRequest request)
+        Task Register(RegistrationRequest request);
+
+        Task<UserDTO?> GetUer(Guid userId);
+        Task<UserDTO?> GetUer(string userName);
+
+
     }
 }
