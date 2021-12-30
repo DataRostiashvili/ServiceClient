@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Utils.Middlewares
@@ -27,7 +29,7 @@ namespace Utils.Middlewares
                 var response = context.Response;
                 response.ContentType = "text/json";
 
-                if (exception is BaseCustomException)
+                if (exception is ApplicationException)
                     response.StatusCode = (int)HttpStatusCode.BadRequest;
                 else
                     response.StatusCode = (int)HttpStatusCode.NotFound;
