@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ServiceClient.Infrastructure.Models.Entity
 {
-    public abstract class UserEntity : IdentityUser<Guid>,  IGenericEntity
+    public abstract class UserEntity :   IGenericEntity
     {
         #region interface implementation
         public int Id { get; set; }

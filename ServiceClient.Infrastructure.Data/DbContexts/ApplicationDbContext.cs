@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using ServiceClient.Infrastructure.Data.Seed;
 using ServiceClient.Infrastructure.Models.Entity;
 
 namespace ServiceClient.Infrastructure.Data.DbContexts
@@ -24,6 +25,8 @@ namespace ServiceClient.Infrastructure.Data.DbContexts
         protected void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            modelBuilder.ApplySeedData();
         }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {

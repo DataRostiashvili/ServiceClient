@@ -11,7 +11,7 @@ namespace ServiceClient.Infrastructure.Data.DbContexts
 {
 
     
-    public class BaseDbContext : IdentityDbContext<UserEntity, RoleEntity, Guid>
+    public class BaseDbContext : DbContext
     {
         public BaseDbContext(DbContextOptions options) : base(options)
         {

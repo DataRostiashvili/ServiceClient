@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace ServiceClient.Infrastructure.Data.Seed
 {
-    internal static class ApplySeedData
+    internal static class ApplySeedDataExtention
     {
-        public static void ApplyIdentity(this ModelBuilder modelBuilder)
+
+        internal static void ApplySeedData (this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ClientEntity>(b =>
             {

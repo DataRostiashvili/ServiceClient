@@ -10,11 +10,12 @@ namespace ServiceClient.Identity.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [ApiVersion("1.0")]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
         private readonly ITokenService _tokenService;
-        private readonly IMapper _mapper
+        private readonly IMapper _mapper;
 
 
         #region ctor
@@ -27,6 +28,7 @@ namespace ServiceClient.Identity.Api.Controllers
         {
             _userService = userService;
             _tokenService = tokenService;
+            _mapper = mapper;
         }
 
         #endregion
@@ -46,6 +48,12 @@ namespace ServiceClient.Identity.Api.Controllers
             }
 
             return result;
+        }
+
+        [HttpGet(nameof(Authenticate))]
+        public IActionResult Get()
+        {
+            return Ok("good brother");
         }
 
 

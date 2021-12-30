@@ -17,16 +17,15 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddApiVersioning(opt =>
-{
-    opt.AssumeDefaultVersionWhenUnspecified = true;
-    opt.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
-    opt.ReportApiVersions = true;
-});
 
+
+builder.Services.AddApplicationVersioning();
 builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("Jwt"));
 builder.Services.AddJWTAuthentication(builder.Configuration);
-builder.Services.AddAutoMapper(Assembly.Load("ServiceClient.Infrastructe.Mappings"));
+builder.Services.AddApplicationCors();
+builder.Services.AddApplicationMappings();
+
+
 
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
@@ -43,11 +42,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+
 
 app.MapControllers();
 
