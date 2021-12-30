@@ -10,6 +10,7 @@ namespace ServiceClient.Infrastructure.Services.Interfaces
 {
     public  interface IUserService
     {
-        UserDTO? Authenticate(AuthenticateRequest request);
+        Task<UserDTO?> Authenticate(AuthenticateRequest request);
+        Task Register(RegistrationRequest request)
     }
 }

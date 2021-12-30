@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Infrastructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Infrastructure.Mappings", "ServiceClient.Infrastructure.Mappings\ServiceClient.Infrastructure.Mappings.csproj", "{B9784747-16C9-4E5F-92B8-D2765FA6C4B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Infrastructure.Validation", "ServiceClient.Infrastructure.Validation\ServiceClient.Infrastructure.Validation.csproj", "{310C910C-12EB-4FAC-8EA2-30552403E507}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{B9784747-16C9-4E5F-92B8-D2765FA6C4B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9784747-16C9-4E5F-92B8-D2765FA6C4B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9784747-16C9-4E5F-92B8-D2765FA6C4B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{310C910C-12EB-4FAC-8EA2-30552403E507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310C910C-12EB-4FAC-8EA2-30552403E507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310C910C-12EB-4FAC-8EA2-30552403E507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310C910C-12EB-4FAC-8EA2-30552403E507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{2254434D-3EAC-478A-92A8-2AD1FB38A191} = {FA007D0D-D452-43D7-A7F4-16F47D0037F9}
 		{5A317D5C-73FC-4203-A077-C45E8F41FBC9} = {5497DFDE-D794-4A8F-BD93-19AE9FC75701}
 		{B9784747-16C9-4E5F-92B8-D2765FA6C4B0} = {5497DFDE-D794-4A8F-BD93-19AE9FC75701}
+		{310C910C-12EB-4FAC-8EA2-30552403E507} = {5497DFDE-D794-4A8F-BD93-19AE9FC75701}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E8D012D9-C54C-4CDA-9F2E-DE018C88B380}

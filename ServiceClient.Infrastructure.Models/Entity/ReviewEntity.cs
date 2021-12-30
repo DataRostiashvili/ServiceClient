@@ -13,7 +13,7 @@ namespace ServiceClient.Infrastructure.Models.Entity
     public class ReviewEntity : IGenericEntity
     {
         #region interface implementation
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
         public DateTime? DeletedAt { get; set; }

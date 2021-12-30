@@ -35,11 +35,11 @@ namespace ServiceClient.Identity.Api.Controllers
 
         [AllowAnonymous]
         [HttpPost(nameof(Authenticate))]
-        public IActionResult Authenticate(AuthenticateRequest request)
+        public async Task<IActionResult> Authenticate(AuthenticateRequest request)
         {
             IActionResult result = Unauthorized();
 
-            var user = _userService.Authenticate(request);
+            var user = await _userService.Authenticate(request);
 
             if (user != null)
             {
@@ -50,11 +50,30 @@ namespace ServiceClient.Identity.Api.Controllers
             return result;
         }
 
-        [HttpGet(nameof(Authenticate))]
-        public IActionResult Get()
+        [AllowAnonymous]
+        [HttpPost(nameof(Register))]
+        public async Task<IActionResult> Register(RegistrationRequest request)
         {
-            return Ok("good brother");
+            
+
+            await _userService.Register(request);
+
+            return CreatedAtAction(nameof(GetUser), new { id = entity.ID }, entity);
+
         }
+
+
+        [HttpGet(nameof(GetUser))]
+        public async Task<IActionResult> GetUser(RegistrationRequest request)
+        {
+
+
+            await _userService.Register(request);
+
+           
+
+        }
+
 
 
 

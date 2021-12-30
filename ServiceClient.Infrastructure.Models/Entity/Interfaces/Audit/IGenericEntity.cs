@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ServiceClient.Infrastructure.Models.Entity.Interfaces.Audit
 {
     public  interface IGenericEntity
-        : IEntity<int>, IEntityAudit, IEntityDeleteAudit, IEntityState
+        : IEntity<Guid>, IEntityAudit, IEntityDeleteAudit, IEntityState
     {
     }
 }

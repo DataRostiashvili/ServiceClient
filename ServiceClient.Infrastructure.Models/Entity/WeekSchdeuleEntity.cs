@@ -10,7 +10,7 @@ namespace ServiceClient.Infrastructure.Models.Entity
     public  class WeekSchdeuleEntity: IGenericEntity
     {
         #region interface implementation
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
@@ -24,13 +24,13 @@ namespace ServiceClient.Infrastructure.Models.Entity
     public class DaySchdeuleEnity : IGenericEntity
     {
         #region interface implementation
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
         public bool IsDeleted { get; set; }
         #endregion
-        
+
         public DayOfWeek DayOfWeek { get; set; }
 
 
@@ -47,7 +47,7 @@ namespace ServiceClient.Infrastructure.Models.Entity
     public class TimeSpanSlot : IGenericEntity
     {
         #region interface implementation
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
         public DateTime? DeletedAt { get; set; }

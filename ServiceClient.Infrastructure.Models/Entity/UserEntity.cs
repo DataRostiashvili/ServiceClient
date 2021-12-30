@@ -11,15 +11,18 @@ using System.Threading.Tasks;
 
 namespace ServiceClient.Infrastructure.Models.Entity
 {
-    public abstract class UserEntity :   IGenericEntity
+    public abstract class UserEntity :  IGenericEntity
     {
         #region interface implementation
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? ModifiedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
         public bool IsDeleted { get; set; }
         #endregion
+
+        public string UserName { get; set; }
+        public string PasswordHash { get; set; }
 
         public string Name { get; set; }
         public string Surname { get; set; }

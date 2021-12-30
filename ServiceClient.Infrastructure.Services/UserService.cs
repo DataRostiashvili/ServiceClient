@@ -2,6 +2,7 @@
 using ServiceClient.Infrastructure.Data.Repositories;
 using ServiceClient.Infrastructure.Models.Api.Identity;
 using ServiceClient.Infrastructure.Models.DTO;
+using ServiceClient.Infrastructure.Models.Entity;
 using ServiceClient.Infrastructure.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace ServiceClient.Infrastructure.Services
             _mapper = mapper;
             _repository = repository;
         }
-        public UserDTO? Authenticate(AuthenticateRequest request)
+        public Task<UserDTO?> Authenticate(AuthenticateRequest request)
         {
             UserDTO? res = null;
 
@@ -37,7 +38,30 @@ namespace ServiceClient.Infrastructure.Services
             if (userEntity != null)
                res = _mapper.Map<UserDTO>(userEntity);
 
-            return res;
+            return Task.FromResult(res);
+        }
+
+        public Task<UserDTO?> GetUer(Guid userId)
+        {
+            UserDTO? res = null;
+
+            var userEntity = _repository
+                .GetByPredicate(user => user.Id == userId)
+                .Where(u => u.PasswordHash == request.PasswordHash)
+                .SingleOrDefault();
+
+            if (userEntity != null)
+                res = _mapper.Map<UserDTO>(userEntity);
+
+            return Task.FromResult(res);
+        }
+
+        public async Task Register(RegistrationRequest request)
+        {
+            var entity = _mapper.Map<UserEntity>(request);
+
+            await _repository.InsertAsync(entity);
+
         }
     }
 }

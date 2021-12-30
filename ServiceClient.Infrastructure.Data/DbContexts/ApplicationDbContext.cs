@@ -12,8 +12,9 @@ namespace ServiceClient.Infrastructure.Data.DbContexts
 {
     public class ApplicationDbContext : BaseDbContext
     {
-       
-        public DbSet<ClientEntity> Clients { get; set; }
+
+        //public DbSet<ClientEntity> Clients { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
         public DbSet<ServiceProviderEntity> ServiceProviders { get; set; }
         public DbSet<GroupEntity> Groups { get; set; }
         public DbSet<ReviewEntity> Reviews { get; set; }
