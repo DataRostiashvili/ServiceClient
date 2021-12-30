@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServiceClient.Infrastructure.Models.Api.Identity
+namespace ServiceClient.Infrastructure.Services.Interfaces
 {
-    public class LoginRequest
+    public  interface IUserService
     {
-        public string UserName { get; set; }
     }
 }

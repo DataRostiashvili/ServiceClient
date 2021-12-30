@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace ServiceClient.Identity.Api.Controllers
 {
@@ -8,10 +10,15 @@ namespace ServiceClient.Identity.Api.Controllers
     [ApiVersion("1.0")]
     public class UserController : ControllerBase
     {
-        [HttpPost]
-        public IActionResult Login()
+        [AllowAnonymous]
+        [HttpPost(nameof(Authenticate))]
+        public IActionResult Authenticate()
         {
+
             return Ok("ok");
         }
+
+
+
     }
 }

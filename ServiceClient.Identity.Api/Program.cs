@@ -4,13 +4,14 @@ using Microsoft.Identity.Web;
 using ServiceClient.Infrastructure.Data.DbContexts;
 using ServiceClient.Infrastructure.Models.Entity;
 using Npgsql.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
+using ServiceClient.Identity.Api.ServiceCollection;
+using ServiceClient.Infrastructure.Models.Api.Identity;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
 builder.Services.AddControllers();
 
@@ -23,13 +24,15 @@ builder.Services.AddApiVersioning(opt =>
     opt.ReportApiVersions = true;
 });
 
+builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("Jwt"));
+builder.Services.AddJWTAuthentication(builder.Configuration);
+builder.Services.AddAutoMapper(Assembly.Load("ServiceClient.Infrastructe.Mappings"));
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
     opt.UseNpgsql(builder.Configuration.GetConnectionString("Postgres.Development"));
 });
-
-builder.Services.AddIdentity<UserEntity, RoleEntity>(opt => opt.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 var app = builder.Build();
