@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using ServiceClient.Infrastructure.Models.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +10,11 @@ using System.Threading.Tasks;
 namespace ServiceClient.Infrastructure.Data.DbContexts
 {
 
-    public interface IBaseDbContext
+    
+    public class BaseDbContext : IdentityDbContext<UserEntity, RoleEntity, Guid>
     {
-
-    }
-    public class BaseDbContext : DbContext, IBaseDbContext
-    {
-       
+        public BaseDbContext(DbContextOptions options) : base(options)
+        {
+        }
     }
 }

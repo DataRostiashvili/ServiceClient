@@ -9,8 +9,9 @@ using ServiceClient.Infrastructure.Models.Entity;
 
 namespace ServiceClient.Infrastructure.Data.DbContexts
 {
-    public class ServiceClientDbContext : BaseDbContext
+    public class ApplicationDbContext : BaseDbContext
     {
+       
         public DbSet<ClientEntity> Clients { get; set; }
         public DbSet<ServiceProviderEntity> ServiceProviders { get; set; }
         public DbSet<GroupEntity> Groups { get; set; }
@@ -24,7 +25,9 @@ namespace ServiceClient.Infrastructure.Data.DbContexts
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
-
+        public ApplicationDbContext(DbContextOptions options) : base(options)
+        {
+        }
 
 
     }

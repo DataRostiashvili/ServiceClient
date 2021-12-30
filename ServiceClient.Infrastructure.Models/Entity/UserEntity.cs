@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Identity;
 using ServiceClient.Infrastructure.Models.Entity.Interfaces.Audit;
 using ServiceClient.Infrastructure.Models.Interfaces;
 using ServiceClient.Infrastructure.Models.Interfaces.Audit;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ServiceClient.Infrastructure.Models.Entity
 {
-    public abstract class UserEntity : IGenericEntity
+    public abstract class UserEntity : IdentityUser<Guid>,  IGenericEntity
     {
         #region interface implementation
         public int Id { get; set; }
