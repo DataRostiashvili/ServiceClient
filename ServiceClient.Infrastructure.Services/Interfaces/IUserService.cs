@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ServiceClient.Infrastructure.Models.Api.Identity;
+using ServiceClient.Infrastructure.Models.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,6 @@ namespace ServiceClient.Infrastructure.Services.Interfaces
 {
     public  interface IUserService
     {
+        UserDTO? Authenticate(AuthenticateRequest request);
     }
 }

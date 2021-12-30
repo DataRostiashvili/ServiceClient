@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DBC
 using ServiceClient.Infrastructure.Data.DbContexts;
 using ServiceClient.Infrastructure.Models.Entity;
 
