@@ -5,7 +5,7 @@ using ServiceClient.Infrastructure.Services.Interfaces;
 using ServiceClient.Infrastructure.Models.Api.Identity;
 using AutoMapper;
 
-namespace ServiceClient.Identity.Api.Controllers
+namespace ServiceClient.Api.Identity.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]

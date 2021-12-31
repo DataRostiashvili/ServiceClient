@@ -15,7 +15,7 @@ using ServiceClient.Infrastructure.Validation.API.Identity;
 using System.Reflection;
 using System.Text;
 
-namespace ServiceClient.Identity.Api.ServiceCollection
+namespace ServiceClient.Api.Identity.ServiceCollection
 {
     public static class ServiceCollectionExtention
     {

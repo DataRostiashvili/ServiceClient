@@ -5,11 +5,11 @@ using ServiceClient.Infrastructure.Data.DbContexts;
 using ServiceClient.Infrastructure.Models.Entity;
 using Npgsql.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using ServiceClient.Identity.Api.ServiceCollection;
 using ServiceClient.Infrastructure.Models.Api.Identity;
 using System.Reflection;
 using Microsoft.AspNetCore.Diagnostics;
 using ServiceClient.Infrastructure.Utils;
+using ServiceClient.Api.Identity.ServiceCollection;
 
 var builder = WebApplication.CreateBuilder(args);
 
