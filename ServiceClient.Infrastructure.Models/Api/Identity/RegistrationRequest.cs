@@ -8,7 +8,7 @@ namespace ServiceClient.Infrastructure.Models.Api.Identity
 {
     public record RegistrationRequest(
         string UserName,
-        string PasswordHash,
+        string Password,
         string Name,
         string Surname,
         string? Address);

@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace ServiceClient.Infrastructure.Models.Api.Identity
 {
-    public record AuthenticateRequest(string UserName, string PasswordHash);
+    public record AuthenticateRequest(string UserName, string Password);
 
 }

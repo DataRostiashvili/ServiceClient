@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace ServiceClient.Infrastructure.Services
 {
-  
+   
+
 
     //https://github.com/dotnet/AspNetCore/blob/main/src/Identity/Extensions.Core/src/PasswordHasher.cs
     public class PasswordHashService : IPasswordHashService

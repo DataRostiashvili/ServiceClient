@@ -19,27 +19,34 @@ namespace ServiceClient.Infrastructure.Services
     {
         private readonly IUserRepository _repository;
         private readonly IMapper _mapper;
+        private readonly IPasswordHashService _hashService;
 
 
         public UserService(
             IUserRepository repository,
-            IMapper mapper
+            IMapper mapper,
+            IPasswordHashService hashService
             )
         {
             _mapper = mapper;
             _repository = repository;
+            _hashService = hashService;
         }
         public Task<UserDTO?> AuthenticateAsync(AuthenticateRequest request)
         {
             UserDTO? res = null;
 
             var userEntity = _repository
-                .GetByPredicate(user => user.UserName == request.UserName)
-                .Where(u => u.PasswordHash == request.PasswordHash)
-                .SingleOrDefault();
+                .GetByPredicate(user => user.UserName == request.UserName).SingleOrDefault();
 
-            if (userEntity != null)
+
+            if(userEntity != null
+                && _hashService.Verify(userEntity.PasswordHash, request.Password))
+            {
                 res = _mapper.Map<UserDTO>(userEntity);
+            }
+
+              
 
             return Task.FromResult(res);
         }
@@ -75,6 +82,8 @@ namespace ServiceClient.Infrastructure.Services
         public async Task Register(RegistrationRequest request)
         {
             var entity = _mapper.Map<UserEntity>(request);
+
+            entity.PasswordHash = _hashService.Hash(request.Password);
 
             await _repository.InsertAsync(entity);
 
