@@ -54,7 +54,6 @@ namespace ServiceClient.Identity.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegistrationRequest request)
         {
-            IActionResult result = BadRequest();
 
             await _userService.Register(request);
 
@@ -65,22 +64,21 @@ namespace ServiceClient.Identity.Api.Controllers
         [HttpPut]
         public async Task<IActionResult> Update(UserUpdateRequest request)
         {
-            IActionResult result = BadRequest();
+           
 
             await _userService.UpdateAsync(request);
 
-            return CreatedAtAction(nameof(GetUser), new { userName = request.UserName });
+            return Ok();
 
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(UserDeleteRequest request)
         {
-            IActionResult result = BadRequest();
 
             await _userService.DeleteAsync(request);
 
-            return CreatedAtAction(nameof(GetUser), new { userName = request.UserName });
+            return Ok();
 
         }
 

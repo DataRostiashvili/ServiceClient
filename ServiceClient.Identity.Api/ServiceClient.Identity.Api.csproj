@@ -33,8 +33,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ServiceClient.Infrastructure.Data\ServiceClient.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\ServiceClient.Infrastructure.Mappings\ServiceClient.Infrastructure.Mappings.csproj" />
     <ProjectReference Include="..\ServiceClient.Infrastructure.Models\ServiceClient.Infrastructure.Models.csproj" />
     <ProjectReference Include="..\ServiceClient.Infrastructure.Services\ServiceClient.Infrastructure.Services.csproj" />
+    <ProjectReference Include="..\ServiceClient.Infrastructure.Validation\ServiceClient.Infrastructure.Validation.csproj" />
     <ProjectReference Include="..\Utils\ServiceClient.Infrastructure.Utils.csproj" />
   </ItemGroup>
 

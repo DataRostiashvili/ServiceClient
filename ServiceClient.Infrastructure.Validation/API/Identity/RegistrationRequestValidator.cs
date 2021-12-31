@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServiceClient.Infrastructure.Validation
+namespace ServiceClient.Infrastructure.Validation.API.Identity
 {
     
     public class RegistrationRequestValidator : AbstractValidator<RegistrationRequest>
