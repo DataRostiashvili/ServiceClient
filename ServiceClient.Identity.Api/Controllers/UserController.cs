@@ -7,10 +7,10 @@ using AutoMapper;
 
 namespace ServiceClient.Identity.Api.Controllers
 {
-    [Route("api/[controller]/[action]")]
     [ApiController]
     [ApiVersion("1.0")]
     [Authorize]
+    [Route("api/[controller]/[action]")]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;

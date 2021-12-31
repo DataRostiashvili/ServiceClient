@@ -6,7 +6,6 @@ namespace ServiceClient.Test.Infrastructure.Service
 {
     public class PasswordHashServiceTest
     {
-
         [Fact]
         public void same_input_should_provide_same_output()
         {

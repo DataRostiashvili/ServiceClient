@@ -16,7 +16,7 @@ namespace ServiceClient.Infrastructure.Validation.API.Identity
             RuleFor(x => x.Name).NotEmpty();
             RuleFor(x => x.UserName).NotEmpty();
             RuleFor(x => x.Surname).NotEmpty();
-            RuleFor(x => x.PasswordHash).NotEmpty();
+            RuleFor(x => x.Password).NotEmpty();
         }
     }
 }

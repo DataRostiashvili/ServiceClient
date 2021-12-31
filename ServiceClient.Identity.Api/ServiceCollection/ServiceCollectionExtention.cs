@@ -1,10 +1,15 @@
 ﻿using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ServiceClient.Infrastructure.Data.DbContexts;
+using ServiceClient.Infrastructure.Data.Repositories;
+using ServiceClient.Infrastructure.Data.Repositories.Interfaces;
 using ServiceClient.Infrastructure.Mappings;
 using ServiceClient.Infrastructure.Models.Api.Identity;
+using ServiceClient.Infrastructure.Services;
+using ServiceClient.Infrastructure.Services.Interfaces;
 using ServiceClient.Infrastructure.Validation;
 using ServiceClient.Infrastructure.Validation.API.Identity;
 using System.Reflection;
@@ -52,11 +57,22 @@ namespace ServiceClient.Identity.Api.ServiceCollection
                 opt.AssumeDefaultVersionWhenUnspecified = true;
                 opt.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
                 opt.ReportApiVersions = true;
+                opt.ApiVersionReader = new HeaderApiVersionReader("api-version");
+
             });
 
             return services;
         }
+        public static IServiceCollection AddApplicationConfiguration(this IServiceCollection services)
+        {
 
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
+
+
+            return services;
+        }
         public static IServiceCollection AddApplicationValidation(this IServiceCollection services)
         {
 

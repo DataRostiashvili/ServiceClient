@@ -15,6 +15,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.1">
       <PrivateAssets>all</PrivateAssets>
@@ -35,6 +36,7 @@
     <ProjectReference Include="..\ServiceClient.Infrastructure.Data\ServiceClient.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\ServiceClient.Infrastructure.Mappings\ServiceClient.Infrastructure.Mappings.csproj" />
     <ProjectReference Include="..\ServiceClient.Infrastructure.Models\ServiceClient.Infrastructure.Models.csproj" />
+    <ProjectReference Include="..\ServiceClient.Infrastructure.Repositories\ServiceClient.Infrastructure.Repositories.csproj" />
     <ProjectReference Include="..\ServiceClient.Infrastructure.Services\ServiceClient.Infrastructure.Services.csproj" />
     <ProjectReference Include="..\ServiceClient.Infrastructure.Validation\ServiceClient.Infrastructure.Validation.csproj" />
     <ProjectReference Include="..\Utils\ServiceClient.Infrastructure.Utils.csproj" />
