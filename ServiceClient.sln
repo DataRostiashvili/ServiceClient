@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{FA007D0D-D452-43D7-A7F4-16F47D0037F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Identity.Api", "ServiceClient.Identity.Api\ServiceClient.Identity.Api.csproj", "{2254434D-3EAC-478A-92A8-2AD1FB38A191}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Api.Identity", "ServiceClient.Identity.Api\ServiceClient.Api.Identity.csproj", "{2254434D-3EAC-478A-92A8-2AD1FB38A191}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Infrastructure.Services", "ServiceClient.Infrastructure.Services\ServiceClient.Infrastructure.Services.csproj", "{5A317D5C-73FC-4203-A077-C45E8F41FBC9}"
 EndProject
@@ -28,11 +28,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Infrastructur
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7E24C768-D77B-4CDA-B6C3-2979EA2C3FC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Test.Infrastructure.Service", "ServiceClient.Test.Infrastructure.Service\ServiceClient.Test.Infrastructure.Service.csproj", "{160BA2A1-B2FB-454D-B66E-F14BAB2425F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Test.Infrastructure.Service", "ServiceClient.Test.Infrastructure.Service\ServiceClient.Test.Infrastructure.Service.csproj", "{160BA2A1-B2FB-454D-B66E-F14BAB2425F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Gateway.Api", "ServiceClient.GateWay.Api\ServiceClient.Gateway.Api.csproj", "{EAAE8B52-73C9-408F-81F7-1846D8C8E9A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Api.Gateway", "ServiceClient.GateWay.Api\ServiceClient.Api.Gateway.csproj", "{EAAE8B52-73C9-408F-81F7-1846D8C8E9A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Infrastructure.Repositories", "ServiceClient.Infrastructure.Repositories\ServiceClient.Infrastructure.Repositories.csproj", "{24F48B3D-8300-487F-A181-6CA01233B657}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Infrastructure.Repositories", "ServiceClient.Infrastructure.Repositories\ServiceClient.Infrastructure.Repositories.csproj", "{24F48B3D-8300-487F-A181-6CA01233B657}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
