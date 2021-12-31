@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using ServiceClient.Identity.Api.ServiceCollection;
 using ServiceClient.Infrastructure.Models.Api.Identity;
 using System.Reflection;
+using Microsoft.AspNetCore.Diagnostics;
+using ServiceClient.Infrastructure.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +26,7 @@ builder.Services.Configure<JWTConfig>(builder.Configuration.GetSection("Jwt"));
 builder.Services.AddJWTAuthentication(builder.Configuration);
 builder.Services.AddApplicationCors();
 builder.Services.AddApplicationMappings();
-
+builder.Services.AddApplicationValidation();
 
 
 
@@ -42,6 +44,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<AppExceptionHandlerMiddleware>();
+
 app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ServiceClient.Infrastructure.Data.DbContexts;
@@ -34,7 +35,7 @@ namespace ServiceClient.Identity.Api.ServiceCollection
         {
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()
-              .Where(a => a.FullName == "ServiceClient.Infrastructe.Mappings"));
+              .Where(a => a.FullName == "ServiceClient.Infrastructe.Mappings").Single());
 
             return services;
         }
@@ -51,7 +52,16 @@ namespace ServiceClient.Identity.Api.ServiceCollection
             return services;
         }
 
-       
+        public static IServiceCollection AddApplicationValidation(this IServiceCollection services)
+        {
+
+            services.AddFluentValidation(conf => conf.RegisterValidatorsFromAssembly(AppDomain.CurrentDomain.GetAssemblies()
+              .Where(a => a.FullName == "ServiceClient.Infrastructe.Mappings").Single()));
+
+
+            return services;
+        }
+
         public static IServiceCollection AddApplicationCors(this IServiceCollection services)
         {
 

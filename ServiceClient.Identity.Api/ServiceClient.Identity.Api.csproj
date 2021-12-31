@@ -9,6 +9,8 @@
 
   <ItemGroup>
     
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
+    
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.1" />
@@ -33,6 +35,7 @@
     <ProjectReference Include="..\ServiceClient.Infrastructure.Data\ServiceClient.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\ServiceClient.Infrastructure.Models\ServiceClient.Infrastructure.Models.csproj" />
     <ProjectReference Include="..\ServiceClient.Infrastructure.Services\ServiceClient.Infrastructure.Services.csproj" />
+    <ProjectReference Include="..\Utils\ServiceClient.Infrastructure.Utils.csproj" />
   </ItemGroup>
 
 </Project>

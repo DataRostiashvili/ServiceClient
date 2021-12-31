@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ServiceClient.Infrastructure.Models.Api.Identity;
 using ServiceClient.Infrastructure.Models.DTO;
 using ServiceClient.Infrastructure.Models.Entity;
 using System;
@@ -14,6 +15,9 @@ namespace ServiceClient.Infrastructure.Mappings
         public UserMappings()
         {
             CreateMap<UserEntity, UserDTO>();
+            CreateMap<RegistrationRequest, UserEntity>();
+            CreateMap<UserUpdateRequest, UserEntity>();
+
         }
     }
 }

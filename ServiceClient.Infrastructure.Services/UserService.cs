@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ServiceClient.Infrastructure.Data.Repositories;
+using ServiceClient.Infrastructure.Data.Repositories.Interfaces;
 using ServiceClient.Infrastructure.Models.Api.Identity;
 using ServiceClient.Infrastructure.Models.DTO;
 using ServiceClient.Infrastructure.Models.Entity;
@@ -12,21 +13,23 @@ using System.Threading.Tasks;
 
 namespace ServiceClient.Infrastructure.Services
 {
+   
+
     public class UserService : IUserService
     {
-        private readonly UserRepository _repository;
+        private readonly IUserRepository _repository;
         private readonly IMapper _mapper;
 
 
         public UserService(
-            UserRepository repository,
+            IUserRepository repository,
             IMapper mapper
             )
         {
             _mapper = mapper;
             _repository = repository;
         }
-        public Task<UserDTO?> Authenticate(AuthenticateRequest request)
+        public Task<UserDTO?> AuthenticateAsync(AuthenticateRequest request)
         {
             UserDTO? res = null;
 
@@ -36,12 +39,12 @@ namespace ServiceClient.Infrastructure.Services
                 .SingleOrDefault();
 
             if (userEntity != null)
-               res = _mapper.Map<UserDTO>(userEntity);
+                res = _mapper.Map<UserDTO>(userEntity);
 
             return Task.FromResult(res);
         }
 
-        public Task<UserDTO?> GetUer(Guid userId)
+        public Task<UserDTO?> GetUserAsync(Guid userId)
         {
             UserDTO? res = null;
 
@@ -55,7 +58,7 @@ namespace ServiceClient.Infrastructure.Services
             return Task.FromResult(res);
         }
 
-        public Task<UserDTO?> GetUer(string userName)
+        public Task<UserDTO?> GetUserAsync(string userName)
         {
             UserDTO? res = null;
 
@@ -76,5 +79,23 @@ namespace ServiceClient.Infrastructure.Services
             await _repository.InsertAsync(entity);
 
         }
+
+        public async Task UpdateAsync(UserUpdateRequest request)
+        {
+            var entity = _mapper.Map<UserEntity>(request);
+
+            await _repository.UpdateAsync(entity);
+
+        }
+
+        public async Task DeleteAsync(UserDeleteRequest request)
+        {
+            var entity = _mapper.Map<UserEntity>(request);
+
+            await _repository.DeleteAsync(entity);
+
+        }
+
+
     }
 }

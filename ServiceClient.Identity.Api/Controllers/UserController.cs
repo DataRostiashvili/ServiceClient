@@ -39,7 +39,7 @@ namespace ServiceClient.Identity.Api.Controllers
         {
             IActionResult result = Unauthorized();
 
-            var user = await _userService.Authenticate(request);
+            var user = await _userService.AuthenticateAsync(request);
 
             if (user != null)
             {
@@ -62,12 +62,33 @@ namespace ServiceClient.Identity.Api.Controllers
 
         }
 
+        [HttpPut]
+        public async Task<IActionResult> Update(UserUpdateRequest request)
+        {
+            IActionResult result = BadRequest();
+
+            await _userService.UpdateAsync(request);
+
+            return CreatedAtAction(nameof(GetUser), new { userName = request.UserName });
+
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(UserDeleteRequest request)
+        {
+            IActionResult result = BadRequest();
+
+            await _userService.DeleteAsync(request);
+
+            return CreatedAtAction(nameof(GetUser), new { userName = request.UserName });
+
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetUserById(Guid userId)
         {
             IActionResult res = NotFound();
-            var user = await _userService.GetUer(userId);
+            var user = await _userService.GetUserAsync(userId);
 
             if (User != null)
                 res = Ok(user);
@@ -80,7 +101,7 @@ namespace ServiceClient.Identity.Api.Controllers
         public async Task<IActionResult> GetUser(string userName)
         {
             IActionResult res = NotFound();
-            var user = await _userService.GetUer(userName);
+            var user = await _userService.GetUserAsync(userName);
 
             if (User != null)
                 res = Ok(user);

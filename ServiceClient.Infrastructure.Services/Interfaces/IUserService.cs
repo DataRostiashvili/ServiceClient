@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace ServiceClient.Infrastructure.Services.Interfaces
 {
-    public  interface IUserService
+    public interface IUserService
     {
-        Task<UserDTO?> Authenticate(AuthenticateRequest request);
+        Task<UserDTO?> AuthenticateAsync(AuthenticateRequest request);
+        Task DeleteAsync(UserDeleteRequest request);
+        Task<UserDTO?> GetUserAsync(Guid userId);
+        Task<UserDTO?> GetUserAsync(string userName);
         Task Register(RegistrationRequest request);
-
-        Task<UserDTO?> GetUer(Guid userId);
-        Task<UserDTO?> GetUer(string userName);
-
-
+        Task UpdateAsync(UserUpdateRequest request);
     }
 }

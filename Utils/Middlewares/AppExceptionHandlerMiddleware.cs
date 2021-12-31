@@ -7,13 +7,13 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Utils.Middlewares
+namespace ServiceClient.Infrastructure.Utils
 {
-    public class ExceptionHandlerMiddleware
+    public class AppExceptionHandlerMiddleware
     {
 
         private readonly RequestDelegate _request;
-        public ExceptionHandlerMiddleware(RequestDelegate request)
+        public AppExceptionHandlerMiddleware(RequestDelegate request)
         {
             _request = request;
         }

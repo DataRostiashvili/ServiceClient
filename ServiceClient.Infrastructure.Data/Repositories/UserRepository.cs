@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 using ServiceClient.Infrastructure.Data.DbContexts;
 using ServiceClient.Infrastructure.Models.Entity;
 using Microsoft.EntityFrameworkCore;
+using ServiceClient.Infrastructure.Data.Repositories.Interfaces;
 
 namespace ServiceClient.Infrastructure.Data.Repositories
 {
-    public class UserRepository
+   
+
+    public class UserRepository : IUserRepository
     {
         private readonly ApplicationDbContext _context;
         private readonly DbSet<UserEntity> _users;
@@ -28,8 +31,22 @@ namespace ServiceClient.Infrastructure.Data.Repositories
 
         public async Task InsertAsync(UserEntity user)
         {
-           await _users.AddAsync(user);
-           await  _context.SaveChangesAsync();
+            await _users.AddAsync(user);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(UserEntity user)
+        {
+
+            _users.Update(user);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(UserEntity user)
+        {
+
+            _users.Remove(user);
+            await _context.SaveChangesAsync();
         }
     }
 }

@@ -18,13 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{FA007D0D-D45
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Identity.Api", "ServiceClient.Identity.Api\ServiceClient.Identity.Api.csproj", "{2254434D-3EAC-478A-92A8-2AD1FB38A191}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Infrastructure.Services", "ServiceClient.Infrastructure.Services\ServiceClient.Infrastructure.Services.csproj", "{5A317D5C-73FC-4203-A077-C45E8F41FBC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Infrastructure.Services", "ServiceClient.Infrastructure.Services\ServiceClient.Infrastructure.Services.csproj", "{5A317D5C-73FC-4203-A077-C45E8F41FBC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Infrastructure.Mappings", "ServiceClient.Infrastructure.Mappings\ServiceClient.Infrastructure.Mappings.csproj", "{B9784747-16C9-4E5F-92B8-D2765FA6C4B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Infrastructure.Mappings", "ServiceClient.Infrastructure.Mappings\ServiceClient.Infrastructure.Mappings.csproj", "{B9784747-16C9-4E5F-92B8-D2765FA6C4B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Infrastructure.Validation", "ServiceClient.Infrastructure.Validation\ServiceClient.Infrastructure.Validation.csproj", "{310C910C-12EB-4FAC-8EA2-30552403E507}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Infrastructure.Validation", "ServiceClient.Infrastructure.Validation\ServiceClient.Infrastructure.Validation.csproj", "{310C910C-12EB-4FAC-8EA2-30552403E507}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{43278C94-E9E9-4B15-8C56-A5B4E78E166B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClient.Infrastructure.Utils", "Utils\ServiceClient.Infrastructure.Utils.csproj", "{43278C94-E9E9-4B15-8C56-A5B4E78E166B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
