@@ -28,8 +28,7 @@ namespace ServiceClient.Infrastructure.Services
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name, user.Name),
-                new Claim(ClaimTypes.NameIdentifier,
-                Guid.NewGuid().ToString())
+                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
              };
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtConfig.Key));

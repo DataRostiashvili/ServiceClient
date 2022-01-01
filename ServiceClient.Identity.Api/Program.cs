@@ -30,6 +30,8 @@ builder.Services.AddJWTAuthentication(builder.Configuration);
 builder.Services.AddApplicationCors();
 builder.Services.AddApplicationMappings();
 builder.Services.AddApplicationValidation();
+builder.Services.AddApplicationConfiguration();
+
 
 
 

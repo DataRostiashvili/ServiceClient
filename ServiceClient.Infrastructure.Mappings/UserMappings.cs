@@ -14,7 +14,9 @@ namespace ServiceClient.Infrastructure.Mappings
     {
         public UserMappings()
         {
-            CreateMap<UserEntity, UserDTO>();
+            CreateMap<UserEntity, UserDTO>()
+                .ForMember(dto => dto.UserId, conf => conf.MapFrom(ent => ent.Id));
+
             CreateMap<RegistrationRequest, UserEntity>();
             CreateMap<UserUpdateRequest, UserEntity>();
 
