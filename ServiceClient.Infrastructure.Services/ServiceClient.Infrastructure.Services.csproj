@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ServiceClient.Infrastructure.Data\ServiceClient.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\ServiceClient.Infrastructure.Models\ServiceClient.Infrastructure.Models.csproj" />
+    <ProjectReference Include="..\ServiceClient.Infrastructure.Repositories\ServiceClient.Infrastructure.Repositories.csproj" />
   </ItemGroup>
 
 	<ItemGroup>

@@ -1,33 +1,29 @@
 ﻿{
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/Event/{everything}",
+      "DownstreamPathTemplate": "/api/User/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 44354
+          "Port": 44316
         }
       ],
-      "UpstreamPathTemplate": "/api/e/{everything}",
+      "UpstreamPathTemplate": "/api/user/{everything}",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
-      "SwaggerKey": "EventPlace",
-      "RouteIsCaseSensitive": false
-    },
-
+      "SwaggerKey": "Identity"
+    }
+  ],
+  "SwaggerEndPoints": [
     {
-      "DownstreamPathTemplate": "/api/Place/{everything}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
+      "Key": "Identity",
+      "Config": [
         {
-          "Host": "localhost",
-          "Port": 44354
+          "Name": "Identity API",
+          "Version": "v1",
+          "Url": "https://localhost:44316/swagger/v1/swagger.json"
         }
-      ],
-
-      "UpstreamPathTemplate": "/api/p/{everything}",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
-      "SwaggerKey": "EventPlace"
+      ]
     }
   ],
   "GlobalConfiguration": {

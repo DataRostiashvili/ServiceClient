@@ -35,7 +35,7 @@ namespace ServiceClient.Api.Identity.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> Authenticate(AuthenticateRequest request)
+        public async Task<IActionResult> Authenticate([FromBody] AuthenticateRequest request)
         {
             IActionResult result = Unauthorized();
 
@@ -52,7 +52,7 @@ namespace ServiceClient.Api.Identity.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> Register(RegistrationRequest request)
+        public async Task<IActionResult> Register([FromBody] RegistrationRequest request)
         {
 
             await _userService.Register(request);
@@ -62,9 +62,9 @@ namespace ServiceClient.Api.Identity.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(UserUpdateRequest request)
+        public async Task<IActionResult> Update([FromBody] UserUpdateRequest request)
         {
-           
+
 
             await _userService.UpdateAsync(request);
 

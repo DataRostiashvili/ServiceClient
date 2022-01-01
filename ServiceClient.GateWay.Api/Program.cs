@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
@@ -8,6 +9,7 @@ builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerForOcelot(builder.Configuration);
 builder.Services.AddOcelot();
 
 
@@ -22,6 +24,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseSwaggerForOcelotUI();
 app.UseOcelot().Wait();
 
 
