@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ServiceClient.Infrastructure.Models.Api.Identity
 {
-
-    public record JWTConfig(string Key, string Issuer, string Audience, string Expiration);
+    public class JWTConfig
+    {
+        public string Key { get; set; }
+        public string Issuer { get; set; }
+        public string Audience { get; set; }
+        public string Expiration { get; set; }
+    }
     
 }

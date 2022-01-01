@@ -19,11 +19,9 @@ namespace ServiceClient.Infrastructure.Models.Entity
 
 
         public PaymentEntity Payment { get; set; }
-        public int paymentId { get; set; }
 
 
         public ServiceDescriptionEntity ServiceDescription { get; set; }
-        public int ServiceDescriptionId { get; set; }
 
 
 
