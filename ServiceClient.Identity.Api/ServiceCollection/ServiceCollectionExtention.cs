@@ -71,8 +71,6 @@ namespace ServiceClient.Api.Identity.ServiceCollection
             services.AddScoped<IPasswordHashService, PasswordHashService>();
             services.AddScoped<ITokenService, TokenService>();
 
-
-
             return services;
         }
         public static IServiceCollection AddApplicationValidation(this IServiceCollection services)
